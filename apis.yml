@@ -1,0 +1,92 @@
+aid: sap-business-one
+name: SAP Business One
+description: >-
+  SAP Business One is an affordable, on-premise or cloud ERP solution designed
+  for small and midsize businesses, covering finance and accounting, purchasing,
+  inventory, sales, CRM, production, and analytics in a single integrated
+  application. It exposes programmatic access through the Service Layer, a
+  modern REST/OData v4 API for the SAP HANA edition, alongside the legacy DI
+  API and DI Server for SQL Server deployments. Authentication uses
+  session-based login that returns a B1SESSION cookie used for subsequent
+  OData calls against company databases.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - ERP
+  - Enterprise Resource Planning
+  - Accounting
+  - Inventory Management
+  - CRM
+  - Small Business
+  - Midsize Business
+  - SAP
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/sap-business-one/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: sap-business-one:service-layer
+    name: SAP Business One Service Layer API
+    description: >-
+      RESTful OData v4 API for SAP Business One on HANA exposing nearly all
+      business objects (business partners, items, orders, invoices, journal
+      entries, inventory, production) for POST/GET/PATCH/DELETE operations.
+      Authentication is session-based via POST /Login returning a B1SESSION
+      cookie scoped to a specific company database.
+    humanURL: >-
+      https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+    baseURL: https://<load-balancer>:50000/b1s/v2
+    tags:
+      - ERP
+      - OData
+      - REST
+      - Service Layer
+      - Business Objects
+    properties:
+      - type: Documentation
+        url: >-
+          https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+      - type: Getting Started
+        url: >-
+          https://learning.sap.com/courses/leveraging-the-sap-business-one-service-layer/introducing-service-layer-api-terms-and-documentation
+      - type: Reference
+        url: https://sap.highwaytwo.com/
+  - aid: sap-business-one:di-api
+    name: SAP Business One DI API
+    description: >-
+      COM-based Data Interface API for the SQL Server edition of SAP Business
+      One providing programmatic access to business objects, master data, and
+      transactional documents. The companion DI Server exposes a SOAP/XML
+      wrapper for remote integration scenarios.
+    humanURL: >-
+      https://help.sap.com/docs/SAP_BUSINESS_ONE
+    baseURL: https://<server>:30000
+    tags:
+      - ERP
+      - DI API
+      - SOAP
+      - COM
+      - Integration
+    properties:
+      - type: Documentation
+        url: >-
+          https://help.sap.com/docs/SAP_BUSINESS_ONE
+common:
+  - type: Website
+    url: https://www.sap.com/products/erp/business-one.html
+  - type: Documentation
+    url: https://help.sap.com/docs/SAP_BUSINESS_ONE
+  - type: Pricing
+    url: https://www.sap.com/products/erp/business-one.html
+  - type: Sign Up
+    url: https://www.sap.com/products/erp/business-one/contact.html
+  - type: Support
+    url: https://support.sap.com
+  - type: Developer Resources
+    url: https://api.sap.com
+  - type: GitHub Samples
+    url: https://github.com/SAP-samples
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
