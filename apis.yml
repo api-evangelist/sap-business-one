@@ -47,7 +47,7 @@ apis:
       - type: Documentation
         url: >-
           https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
-      - type: Getting Started
+      - type: GettingStarted
         url: >-
           https://learning.sap.com/courses/leveraging-the-sap-business-one-service-layer/introducing-service-layer-api-terms-and-documentation
       - type: Reference
@@ -79,7 +79,7 @@ common:
     url: https://help.sap.com/docs/SAP_BUSINESS_ONE
   - type: Pricing
     url: https://www.sap.com/products/erp/business-one.html
-  - type: Sign Up
+  - type: SignUp
     url: https://www.sap.com/products/erp/business-one/contact.html
   - type: Support
     url: https://support.sap.com
