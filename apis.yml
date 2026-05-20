@@ -73,6 +73,8 @@ apis:
         url: >-
           https://help.sap.com/docs/SAP_BUSINESS_ONE
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/sap-business-one
   - type: Website
     url: https://www.sap.com/products/erp/business-one.html
   - type: Documentation
