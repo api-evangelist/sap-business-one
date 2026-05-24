@@ -1,0 +1,324 @@
+openapi: 3.1.0
+info:
+  title: SAP Business One Service Layer API
+  description: |
+    The SAP Business One Service Layer is an OData v4 (and legacy v3) REST
+    interface to a Business One company database. Clients authenticate via
+    POST /Login using company/user/password credentials and receive a
+    B1SESSION cookie, then operate on entities (BusinessPartners, Items,
+    Orders, Invoices, etc.) using standard OData verbs.
+  version: "v2"
+  contact:
+    name: SAP Business One
+    url: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+servers:
+  - url: https://{host}:{port}/b1s/v2
+    description: Service Layer v2 (OData v4)
+    variables:
+      host:
+        default: localhost
+      port:
+        default: "50000"
+  - url: https://{host}:{port}/b1s/v1
+    description: Service Layer v1 (OData v3, legacy)
+    variables:
+      host:
+        default: localhost
+      port:
+        default: "50000"
+security:
+  - sessionCookie: []
+paths:
+  /Login:
+    post:
+      summary: Authenticate and start a Service Layer session
+      description: Returns a B1SESSION cookie used for subsequent requests.
+      operationId: login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [CompanyDB, UserName, Password]
+              properties:
+                CompanyDB:
+                  type: string
+                UserName:
+                  type: string
+                Password:
+                  type: string
+                Language:
+                  type: integer
+      responses:
+        '200':
+          description: Session created
+          headers:
+            Set-Cookie:
+              description: B1SESSION cookie
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  SessionId:
+                    type: string
+                  Version:
+                    type: string
+                  SessionTimeout:
+                    type: integer
+        '401':
+          description: Invalid credentials
+  /Logout:
+    post:
+      summary: End the current Service Layer session
+      operationId: logout
+      responses:
+        '204':
+          description: Logged out
+  /BusinessPartners:
+    get:
+      summary: List business partners
+      operationId: listBusinessPartners
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/OrderBy'
+      responses:
+        '200':
+          description: OData collection of business partners
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+    post:
+      summary: Create a business partner
+      operationId: createBusinessPartner
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Created
+  /BusinessPartners('{CardCode}'):
+    get:
+      summary: Get a business partner by CardCode
+      operationId: getBusinessPartner
+      parameters:
+        - name: CardCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Business partner
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+    patch:
+      summary: Update a business partner
+      operationId: updateBusinessPartner
+      parameters:
+        - name: CardCode
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '204':
+          description: Updated
+    delete:
+      summary: Delete a business partner
+      operationId: deleteBusinessPartner
+      parameters:
+        - name: CardCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deleted
+  /Items:
+    get:
+      summary: List items (products)
+      operationId: listItems
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+      responses:
+        '200':
+          description: OData collection of items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+    post:
+      summary: Create an item
+      operationId: createItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Created
+  /Orders:
+    get:
+      summary: List sales orders
+      operationId: listOrders
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+      responses:
+        '200':
+          description: OData collection of orders
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+    post:
+      summary: Create a sales order
+      operationId: createOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Created
+  /Orders({DocEntry}):
+    get:
+      summary: Get a sales order by DocEntry
+      operationId: getOrder
+      parameters:
+        - name: DocEntry
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Sales order
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /Invoices:
+    get:
+      summary: List A/R invoices
+      operationId: listInvoices
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+      responses:
+        '200':
+          description: OData collection of invoices
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+    post:
+      summary: Create an A/R invoice
+      operationId: createInvoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Created
+  /CompanyService_GetCompanyInfo:
+    post:
+      summary: Get current company info
+      description: Cross-service action returning the company configuration.
+      operationId: getCompanyInfo
+      responses:
+        '200':
+          description: Company info
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+components:
+  parameters:
+    Select:
+      name: $select
+      in: query
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+    OrderBy:
+      name: $orderby
+      in: query
+      schema:
+        type: string
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: B1SESSION
+      description: Session cookie returned from POST /Login.
+  schemas:
+    ODataCollection:
+      type: object
+      properties:
+        "@odata.context":
+          type: string
+        "@odata.nextLink":
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
