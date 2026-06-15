@@ -1,0 +1,328 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAP Business One Service Layer API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "B1SESSION",
+      "value": "{{B1SESSION}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authenticate and start a Service Layer session",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/Login",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns a B1SESSION cookie used for subsequent requests."
+    },
+    {
+      "info": {
+        "name": "End the current Service Layer session",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/Logout"
+      },
+      "docs": "End the current Service Layer session"
+    },
+    {
+      "info": {
+        "name": "List business partners",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{host}:{port}/b1s/v2/BusinessPartners",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$orderby",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List business partners"
+    },
+    {
+      "info": {
+        "name": "Create a business partner",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/BusinessPartners",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a business partner"
+    },
+    {
+      "info": {
+        "name": "Get a business partner by CardCode",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{host}:{port}/b1s/v2/BusinessPartners(':CardCode')",
+        "params": [
+          {
+            "name": "CardCode",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a business partner by CardCode"
+    },
+    {
+      "info": {
+        "name": "Update a business partner",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://{host}:{port}/b1s/v2/BusinessPartners(':CardCode')",
+        "params": [
+          {
+            "name": "CardCode",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a business partner"
+    },
+    {
+      "info": {
+        "name": "Delete a business partner",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://{host}:{port}/b1s/v2/BusinessPartners(':CardCode')",
+        "params": [
+          {
+            "name": "CardCode",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a business partner"
+    },
+    {
+      "info": {
+        "name": "List items (products)",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{host}:{port}/b1s/v2/Items",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List items (products)"
+    },
+    {
+      "info": {
+        "name": "Create an item",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/Items",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create an item"
+    },
+    {
+      "info": {
+        "name": "List sales orders",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{host}:{port}/b1s/v2/Orders",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List sales orders"
+    },
+    {
+      "info": {
+        "name": "Create a sales order",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/Orders",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a sales order"
+    },
+    {
+      "info": {
+        "name": "Get a sales order by DocEntry",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{host}:{port}/b1s/v2/Orders(:DocEntry)",
+        "params": [
+          {
+            "name": "DocEntry",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get a sales order by DocEntry"
+    },
+    {
+      "info": {
+        "name": "List A/R invoices",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://{host}:{port}/b1s/v2/Invoices",
+        "params": [
+          {
+            "name": "$select",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$filter",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$top",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "$skip",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List A/R invoices"
+    },
+    {
+      "info": {
+        "name": "Create an A/R invoice",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/Invoices",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create an A/R invoice"
+    },
+    {
+      "info": {
+        "name": "Get current company info",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{host}:{port}/b1s/v2/CompanyService_GetCompanyInfo"
+      },
+      "docs": "Cross-service action returning the company configuration."
+    }
+  ],
+  "bundled": true
+}
