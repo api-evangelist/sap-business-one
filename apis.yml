@@ -81,7 +81,7 @@ common:
     url: https://help.sap.com/docs/SAP_BUSINESS_ONE
   - type: Pricing
     url: https://www.sap.com/products/erp/business-one.html
-  - type: SignUp
+  - type: Signup
     url: https://www.sap.com/products/erp/business-one/contact.html
   - type: Support
     url: https://support.sap.com
