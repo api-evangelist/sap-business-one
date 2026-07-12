@@ -73,6 +73,12 @@ apis:
         url: >-
           https://help.sap.com/docs/SAP_BUSINESS_ONE
 common:
+  - type: VulnerabilityDisclosure
+    url: security/sap-business-one-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/sap-business-one-domain-security.yml
+  - type: Authentication
+    url: authentication/sap-business-one-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/showcase/sap-business-one
   - type: Website
@@ -89,6 +95,8 @@ common:
     url: https://api.sap.com
   - type: GitHub Samples
     url: https://github.com/SAP-samples
+  - url: https://news.sap.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

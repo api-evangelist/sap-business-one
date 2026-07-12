@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/sap-business-one-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - cookie
+schemes:
+- name: sessionCookie
+  type: apiKey
+  in: cookie
+  parameter: B1SESSION
+  description: Session cookie returned from POST /Login.
+  sources:
+  - openapi/sap-business-one-openapi.yml
