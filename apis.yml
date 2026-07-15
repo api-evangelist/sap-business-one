@@ -73,6 +73,8 @@ apis:
         url: >-
           https://help.sap.com/docs/SAP_BUSINESS_ONE
 common:
+  - type: AgenticAccess
+    url: agentic-access/sap-business-one-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/sap-business-one-vulnerability-disclosure.yml
   - type: DomainSecurity
