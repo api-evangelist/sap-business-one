@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: SAP Business One Service Layer BusinessPartners Items API
+  description: 'The SAP Business One Service Layer is an OData v4 (and legacy v3) REST
+
+    interface to a Business One company database. Clients authenticate via
+
+    POST /Login using company/user/password credentials and receive a
+
+    B1SESSION cookie, then operate on entities (BusinessPartners, Items,
+
+    Orders, Invoices, etc.) using standard OData verbs.
+
+    '
+  version: v2
+  contact:
+    name: SAP Business One
+    url: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+servers:
+- url: https://{host}:{port}/b1s/v2
+  description: Service Layer v2 (OData v4)
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '50000'
+- url: https://{host}:{port}/b1s/v1
+  description: Service Layer v1 (OData v3, legacy)
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '50000'
+security:
+- sessionCookie: []
+tags:
+- name: Items
+paths:
+  /Items:
+    get:
+      summary: List items (products)
+      operationId: listItems
+      parameters:
+      - $ref: '#/components/parameters/Select'
+      - $ref: '#/components/parameters/Filter'
+      - $ref: '#/components/parameters/Top'
+      - $ref: '#/components/parameters/Skip'
+      responses:
+        '200':
+          description: OData collection of items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+      tags:
+      - Items
+    post:
+      summary: Create an item
+      operationId: createItem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Created
+      tags:
+      - Items
+components:
+  parameters:
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+    Select:
+      name: $select
+      in: query
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      schema:
+        type: integer
+  schemas:
+    ODataCollection:
+      type: object
+      properties:
+        '@odata.context':
+          type: string
+        '@odata.nextLink':
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: B1SESSION
+      description: Session cookie returned from POST /Login.

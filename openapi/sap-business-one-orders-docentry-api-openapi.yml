@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: SAP Business One Service Layer BusinessPartners Orders({DocEntry}) API
+  description: 'The SAP Business One Service Layer is an OData v4 (and legacy v3) REST
+
+    interface to a Business One company database. Clients authenticate via
+
+    POST /Login using company/user/password credentials and receive a
+
+    B1SESSION cookie, then operate on entities (BusinessPartners, Items,
+
+    Orders, Invoices, etc.) using standard OData verbs.
+
+    '
+  version: v2
+  contact:
+    name: SAP Business One
+    url: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+servers:
+- url: https://{host}:{port}/b1s/v2
+  description: Service Layer v2 (OData v4)
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '50000'
+- url: https://{host}:{port}/b1s/v1
+  description: Service Layer v1 (OData v3, legacy)
+  variables:
+    host:
+      default: localhost
+    port:
+      default: '50000'
+security:
+- sessionCookie: []
+tags:
+- name: Orders({DocEntry})
+paths:
+  /Orders({DocEntry}):
+    get:
+      summary: Get a sales order by DocEntry
+      operationId: getOrder
+      parameters:
+      - name: DocEntry
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Sales order
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+      tags:
+      - Orders({DocEntry})
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: B1SESSION
+      description: Session cookie returned from POST /Login.
