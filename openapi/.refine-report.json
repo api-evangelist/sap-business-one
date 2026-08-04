@@ -1,0 +1,30 @@
+{
+  "provider": "sap-business-one",
+  "sources": [
+    "sap-business-one-businesspartners-api-openapi.yml",
+    "sap-business-one-businesspartners-cardcode-api-openapi.yml",
+    "sap-business-one-companyservice-getcompanyinfo-api-openapi.yml",
+    "sap-business-one-invoices-api-openapi.yml",
+    "sap-business-one-items-api-openapi.yml",
+    "sap-business-one-login-api-openapi.yml",
+    "sap-business-one-logout-api-openapi.yml",
+    "sap-business-one-orders-api-openapi.yml",
+    "sap-business-one-orders-docentry-api-openapi.yml"
+  ],
+  "outputs": [
+    "sap-business-one-businesspartners-api-openapi.yml",
+    "sap-business-one-businesspartners-cardcode-api-openapi.yml",
+    "sap-business-one-companyservice-getcompanyinfo-api-openapi.yml",
+    "sap-business-one-invoices-api-openapi.yml",
+    "sap-business-one-items-api-openapi.yml",
+    "sap-business-one-login-api-openapi.yml",
+    "sap-business-one-logout-api-openapi.yml",
+    "sap-business-one-orders-api-openapi.yml",
+    "sap-business-one-orders-docentry-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
