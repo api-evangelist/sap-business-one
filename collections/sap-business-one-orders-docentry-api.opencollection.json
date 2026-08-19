@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SAP Business One Service Layer BusinessPartners Orders({DocEntry}) API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "B1SESSION",
+      "value": "{{B1SESSION}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders({DocEntry})",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a sales order by DocEntry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/b1s/v2/Orders(:DocEntry)",
+            "params": [
+              {
+                "name": "DocEntry",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a sales order by DocEntry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
