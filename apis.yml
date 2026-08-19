@@ -36,7 +36,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/sap-business-one/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-05-11'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: sap-business-one:service-layer
   name: SAP Business One Service Layer API
