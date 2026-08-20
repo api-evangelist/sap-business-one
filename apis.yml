@@ -87,6 +87,8 @@ apis:
     https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
+  - Business Partners
+  tags_raw:
   - BusinessPartners
   properties:
   - type: OpenAPI
@@ -98,7 +100,8 @@ apis:
   humanURL: >-
     https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
-  tags:
+  tags: []
+  tags_raw:
   - BusinessPartners('{CardCode}')
   properties:
   - type: OpenAPI
@@ -133,6 +136,8 @@ apis:
     https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
@@ -166,6 +171,8 @@ apis:
     https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -177,7 +184,8 @@ apis:
   humanURL: >-
     https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
-  tags:
+  tags: []
+  tags_raw:
   - Orders({DocEntry})
   properties:
   - type: OpenAPI
