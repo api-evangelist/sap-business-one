@@ -1,14 +1,10 @@
 aid: sap-business-one
 name: SAP Business One
-description: >-
-  SAP Business One is an affordable, on-premise or cloud ERP solution designed
-  for small and midsize businesses, covering finance and accounting, purchasing,
-  inventory, sales, CRM, production, and analytics in a single integrated
-  application. It exposes programmatic access through the Service Layer, a
-  modern REST/OData v4 API for the SAP HANA edition, alongside the legacy DI
-  API and DI Server for SQL Server deployments. Authentication uses
-  session-based login that returns a B1SESSION cookie used for subsequent
-  OData calls against company databases.
+description: SAP Business One is an affordable, on-premise or cloud ERP solution designed for small and midsize
+  businesses, covering finance and accounting, purchasing, inventory, sales, CRM, production, and analytics in a
+  single integrated application. It exposes programmatic access through the Service Layer, a modern REST/OData v4
+  API for the SAP HANA edition, alongside the legacy DI API and DI Server for SQL Server deployments. Authentication
+  uses session-based login that returns a B1SESSION cookie used for subsequent OData calls against company databases.
 type: Index
 accessModel:
   pricing: unknown
@@ -24,29 +20,25 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sap-business-one.png
 tags:
-  - ERP
-  - Enterprise Resource Planning
-  - Accounting
-  - Inventory Management
-  - CRM
-  - Small Business
-  - Midsize Business
-  - SAP
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/sap-business-one/refs/heads/main/apis.yml
+- ERP
+- Enterprise Resource Planning
+- Accounting
+- Inventory Management
+- CRM
+- Small Business
+- Midsize Business
+- SAP
+url: https://raw.githubusercontent.com/api-evangelist/sap-business-one/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-08-21'
 specificationVersion: '0.23'
 apis:
 - aid: sap-business-one:service-layer
   name: SAP Business One Service Layer API
-  description: >-
-    RESTful OData v4 API for SAP Business One on HANA exposing nearly all business objects (business partners,
-    items, orders, invoices, journal entries, inventory, production) for POST/GET/PATCH/DELETE operations.
-    Authentication is session-based via POST /Login returning a B1SESSION cookie scoped to a specific
-    company database.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  description: RESTful OData v4 API for SAP Business One on HANA exposing nearly all business objects (business
+    partners, items, orders, invoices, journal entries, inventory, production) for POST/GET/PATCH/DELETE operations.
+    Authentication is session-based via POST /Login returning a B1SESSION cookie scoped to a specific company database.
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - ERP
@@ -56,19 +48,16 @@ apis:
   - Business Objects
   properties:
   - type: Documentation
-    url: >-
-      https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+    url: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   - type: GettingStarted
-    url: >-
-      https://learning.sap.com/courses/leveraging-the-sap-business-one-service-layer/introducing-service-layer-api-terms-and-documentation
+    url: https://learning.sap.com/courses/leveraging-the-sap-business-one-service-layer/introducing-service-layer-api-terms-and-documentation
   - type: Reference
     url: https://sap.highwaytwo.com/
 - aid: sap-business-one:di-api
   name: SAP Business One DI API
-  description: >-
-    COM-based Data Interface API for the SQL Server edition of SAP Business One providing programmatic
-    access to business objects, master data, and transactional documents. The companion DI Server exposes
-    a SOAP/XML wrapper for remote integration scenarios.
+  description: COM-based Data Interface API for the SQL Server edition of SAP Business One providing programmatic
+    access to business objects, master data, and transactional documents. The companion DI Server exposes a SOAP/XML
+    wrapper for remote integration scenarios.
   humanURL: https://help.sap.com/docs/SAP_BUSINESS_ONE
   baseURL: https://<server>:30000
   tags:
@@ -83,8 +72,7 @@ apis:
 - aid: sap-business-one:sap-business-one-businesspartners-api
   name: SAP Business One BusinessPartners API
   description: The BusinessPartners API from SAP Business One — 1 operation(s) for businesspartners.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - Business Partners
@@ -95,10 +83,8 @@ apis:
     url: openapi/sap-business-one-businesspartners-api-openapi.yml
 - aid: sap-business-one:sap-business-one-businesspartners-cardcode-api
   name: SAP Business One BusinessPartners('{CardCode}') API
-  description: >-
-    The BusinessPartners('{CardCode}') API from SAP Business One — 1 operation(s) for businesspartners('{cardcode}').
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  description: The BusinessPartners('{CardCode}') API from SAP Business One — 1 operation(s) for businesspartners('{cardcode}').
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags: []
   tags_raw:
@@ -108,10 +94,8 @@ apis:
     url: openapi/sap-business-one-businesspartners-cardcode-api-openapi.yml
 - aid: sap-business-one:sap-business-one-companyservice-getcompanyinfo-api
   name: SAP Business One CompanyService GetCompanyInfo API
-  description: >-
-    The CompanyService GetCompanyInfo API from SAP Business One — 1 operation(s) for companyservice getcompanyinfo.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  description: The CompanyService GetCompanyInfo API from SAP Business One — 1 operation(s) for companyservice getcompanyinfo.
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - CompanyService GetCompanyInfo
@@ -121,8 +105,7 @@ apis:
 - aid: sap-business-one:sap-business-one-invoices-api
   name: SAP Business One Invoices API
   description: The Invoices API from SAP Business One — 1 operation(s) for invoices.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - Invoices
@@ -132,8 +115,7 @@ apis:
 - aid: sap-business-one:sap-business-one-items-api
   name: SAP Business One Items API
   description: The Items API from SAP Business One — 1 operation(s) for items.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - Item
@@ -145,8 +127,7 @@ apis:
 - aid: sap-business-one:sap-business-one-login-api
   name: SAP Business One Login API
   description: The Login API from SAP Business One — 1 operation(s) for login.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - Login
@@ -156,8 +137,7 @@ apis:
 - aid: sap-business-one:sap-business-one-logout-api
   name: SAP Business One Logout API
   description: The Logout API from SAP Business One — 1 operation(s) for logout.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - Logout
@@ -167,8 +147,7 @@ apis:
 - aid: sap-business-one:sap-business-one-orders-api
   name: SAP Business One Orders API
   description: The Orders API from SAP Business One — 1 operation(s) for orders.
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags:
   - Order
@@ -179,10 +158,8 @@ apis:
     url: openapi/sap-business-one-orders-api-openapi.yml
 - aid: sap-business-one:sap-business-one-orders-docentry-api
   name: SAP Business One Orders({DocEntry}) API
-  description: >-
-    The Orders({DocEntry}) API from SAP Business One — 1 operation(s) for orders({docentry}).
-  humanURL: >-
-    https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
+  description: The Orders({DocEntry}) API from SAP Business One — 1 operation(s) for orders({docentry}).
+  humanURL: https://help.sap.com/doc/056f69366b5345a386bb8149f1700c19/10.0/en-US/Service%20Layer%20API%20Reference.html
   baseURL: https://<load-balancer>:50000/b1s/v2
   tags: []
   tags_raw:
@@ -191,32 +168,39 @@ apis:
   - type: OpenAPI
     url: openapi/sap-business-one-orders-docentry-api-openapi.yml
 common:
-  - type: AgenticAccess
-    url: agentic-access/sap-business-one-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/sap-business-one-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/sap-business-one-domain-security.yml
-  - type: Authentication
-    url: authentication/sap-business-one-authentication.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/showcase/sap-business-one
-  - type: Website
-    url: https://www.sap.com/products/erp/business-one.html
-  - type: Documentation
-    url: https://help.sap.com/docs/SAP_BUSINESS_ONE
-  - type: Pricing
-    url: https://www.sap.com/products/erp/business-one.html
-  - type: Signup
-    url: https://www.sap.com/products/erp/business-one/contact.html
-  - type: Support
-    url: https://support.sap.com
-  - type: Developer Resources
-    url: https://api.sap.com
-  - type: GitHub Samples
-    url: https://github.com/SAP-samples
-  - url: https://news.sap.com/feed/
-    type: Blog
+- type: ParentCompany
+  url: https://apis.io/providers/sap/
+  name: Sap
+  x-relationship: product
+  x-generated-by: sap-family:2026-08-21
+- type: AgenticAccess
+  url: agentic-access/sap-business-one-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/sap-business-one-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/sap-business-one-domain-security.yml
+- type: Authentication
+  url: authentication/sap-business-one-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/showcase/sap-business-one
+- type: Website
+  url: https://www.sap.com/products/erp/business-one.html
+- type: Documentation
+  url: https://help.sap.com/docs/SAP_BUSINESS_ONE
+- type: Pricing
+  url: https://www.sap.com/products/erp/business-one.html
+- type: Signup
+  url: https://www.sap.com/products/erp/business-one/contact.html
+- type: Support
+  url: https://support.sap.com
+- type: Developer Resources
+  url: https://api.sap.com
+- type: GitHub Samples
+  url: https://github.com/SAP-samples
+- url: https://news.sap.com/feed/
+  type: Blog
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: sap
+x-relationship: product
