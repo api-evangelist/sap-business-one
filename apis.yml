@@ -6,6 +6,18 @@ description: SAP Business One is an affordable, on-premise or cloud ERP solution
   API for the SAP HANA edition, alongside the legacy DI API and DI Server for SQL Server deployments. Authentication
   uses session-based login that returns a B1SESSION cookie used for subsequent OData calls against company databases.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
