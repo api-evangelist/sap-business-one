@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: SAP Business One Service Layer BusinessPartners Invoices API
+  title: SAP Business One Service Layer Invoices API
   description: 'The SAP Business One Service Layer is an OData v4 (and legacy v3) REST
 
     interface to a Business One company database. Clients authenticate via
@@ -9,9 +9,7 @@ info:
 
     B1SESSION cookie, then operate on entities (BusinessPartners, Items,
 
-    Orders, Invoices, etc.) using standard OData verbs.
-
-    '
+    Orders, Invoices, etc.) using standard OData verbs.'
   version: v2
   contact:
     name: SAP Business One
@@ -76,8 +74,8 @@ components:
       in: query
       schema:
         type: string
-    Skip:
-      name: $skip
+    Top:
+      name: $top
       in: query
       schema:
         type: integer
@@ -86,8 +84,8 @@ components:
       in: query
       schema:
         type: string
-    Top:
-      name: $top
+    Skip:
+      name: $skip
       in: query
       schema:
         type: integer

@@ -1,15 +1,7 @@
 {
   "provider": "sap-business-one",
   "sources": [
-    "sap-business-one-businesspartners-api-openapi.yml",
-    "sap-business-one-businesspartners-cardcode-api-openapi.yml",
-    "sap-business-one-companyservice-getcompanyinfo-api-openapi.yml",
-    "sap-business-one-invoices-api-openapi.yml",
-    "sap-business-one-items-api-openapi.yml",
-    "sap-business-one-login-api-openapi.yml",
-    "sap-business-one-logout-api-openapi.yml",
-    "sap-business-one-orders-api-openapi.yml",
-    "sap-business-one-orders-docentry-api-openapi.yml"
+    "_original/sap-business-one-openapi.yml"
   ],
   "outputs": [
     "sap-business-one-businesspartners-api-openapi.yml",
@@ -22,9 +14,50 @@
     "sap-business-one-orders-api-openapi.yml",
     "sap-business-one-orders-docentry-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sap-business-one-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sap-business-one-openapi.yml: tagged paths POST /Login -> Login",
+    "sap-business-one-openapi.yml: tagged paths POST /Logout -> Logout",
+    "sap-business-one-openapi.yml: tagged paths GET /BusinessPartners -> BusinessPartners",
+    "sap-business-one-openapi.yml: tagged paths POST /BusinessPartners -> BusinessPartners",
+    "sap-business-one-openapi.yml: tagged paths GET /BusinessPartners('{CardCode}') -> BusinessPartners('{CardCode}')",
+    "sap-business-one-openapi.yml: tagged paths PATCH /BusinessPartners('{CardCode}') -> BusinessPartners('{CardCode}')",
+    "sap-business-one-openapi.yml: tagged paths DELETE /BusinessPartners('{CardCode}') -> BusinessPartners('{CardCode}')",
+    "sap-business-one-openapi.yml: tagged paths GET /Items -> Items",
+    "sap-business-one-openapi.yml: tagged paths POST /Items -> Items",
+    "sap-business-one-openapi.yml: tagged paths GET /Orders -> Orders",
+    "sap-business-one-openapi.yml: tagged paths POST /Orders -> Orders",
+    "sap-business-one-openapi.yml: tagged paths GET /Orders({DocEntry}) -> Orders({DocEntry})",
+    "sap-business-one-openapi.yml: tagged paths GET /Invoices -> Invoices",
+    "sap-business-one-openapi.yml: tagged paths POST /Invoices -> Invoices",
+    "sap-business-one-openapi.yml: tagged paths POST /CompanyService_GetCompanyInfo -> CompanyService GetCompanyInfo",
+    "sap-business-one-openapi.yml: declared missing tag: BusinessPartners",
+    "sap-business-one-openapi.yml: declared missing tag: BusinessPartners('{CardCode}')",
+    "sap-business-one-openapi.yml: declared missing tag: CompanyService GetCompanyInfo",
+    "sap-business-one-openapi.yml: declared missing tag: Invoices",
+    "sap-business-one-openapi.yml: declared missing tag: Items",
+    "sap-business-one-openapi.yml: declared missing tag: Login",
+    "sap-business-one-openapi.yml: declared missing tag: Logout",
+    "sap-business-one-openapi.yml: declared missing tag: Orders",
+    "sap-business-one-openapi.yml: declared missing tag: Orders({DocEntry})",
+    "superseded outputs removed: sap-business-one-business-partners-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 11 total)"
+  ],
+  "skipped": [
+    "sap-business-one-business-partners-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-businesspartners-cardcode-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-companyservice-getcompanyinfo-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-login-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-logout-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sap-business-one-orders-docentry-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

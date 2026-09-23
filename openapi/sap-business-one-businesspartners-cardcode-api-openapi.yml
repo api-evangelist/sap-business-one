@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: SAP Business One Service Layer BusinessPartners BusinessPartners('{CardCode}') API
+  title: SAP Business One Service Layer Business Partners('{Card…
   description: 'The SAP Business One Service Layer is an OData v4 (and legacy v3) REST
 
     interface to a Business One company database. Clients authenticate via
@@ -9,9 +9,7 @@ info:
 
     B1SESSION cookie, then operate on entities (BusinessPartners, Items,
 
-    Orders, Invoices, etc.) using standard OData verbs.
-
-    '
+    Orders, Invoices, etc.) using standard OData verbs.'
   version: v2
   contact:
     name: SAP Business One
