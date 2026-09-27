@@ -70,11 +70,6 @@ paths:
       - Business Partners
 components:
   parameters:
-    OrderBy:
-      name: $orderby
-      in: query
-      schema:
-        type: string
     Filter:
       name: $filter
       in: query
@@ -95,6 +90,11 @@ components:
       in: query
       schema:
         type: integer
+    OrderBy:
+      name: $orderby
+      in: query
+      schema:
+        type: string
   schemas:
     ODataCollection:
       type: object
