@@ -68,27 +68,6 @@ paths:
       tags:
       - Orders
 components:
-  parameters:
-    Filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
-    Top:
-      name: $top
-      in: query
-      schema:
-        type: integer
-    Select:
-      name: $select
-      in: query
-      schema:
-        type: string
-    Skip:
-      name: $skip
-      in: query
-      schema:
-        type: integer
   schemas:
     ODataCollection:
       type: object
@@ -102,6 +81,27 @@ components:
           items:
             type: object
             additionalProperties: true
+  parameters:
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    Select:
+      name: $select
+      in: query
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      schema:
+        type: integer
   securitySchemes:
     sessionCookie:
       type: apiKey
