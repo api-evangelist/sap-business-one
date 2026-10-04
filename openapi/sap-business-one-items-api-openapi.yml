@@ -68,25 +68,7 @@ paths:
       tags:
       - Items
 components:
-  schemas:
-    ODataCollection:
-      type: object
-      properties:
-        '@odata.context':
-          type: string
-        '@odata.nextLink':
-          type: string
-        value:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
   parameters:
-    Skip:
-      name: $skip
-      in: query
-      schema:
-        type: integer
     Filter:
       name: $filter
       in: query
@@ -102,6 +84,24 @@ components:
       in: query
       schema:
         type: integer
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+  schemas:
+    ODataCollection:
+      type: object
+      properties:
+        '@odata.context':
+          type: string
+        '@odata.nextLink':
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   securitySchemes:
     sessionCookie:
       type: apiKey

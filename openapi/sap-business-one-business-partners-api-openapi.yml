@@ -69,32 +69,14 @@ paths:
       tags:
       - Business Partners
 components:
-  schemas:
-    ODataCollection:
-      type: object
-      properties:
-        '@odata.context':
-          type: string
-        '@odata.nextLink':
-          type: string
-        value:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
   parameters:
-    OrderBy:
-      name: $orderby
+    Filter:
+      name: $filter
       in: query
       schema:
         type: string
-    Skip:
-      name: $skip
-      in: query
-      schema:
-        type: integer
-    Filter:
-      name: $filter
+    OrderBy:
+      name: $orderby
       in: query
       schema:
         type: string
@@ -108,6 +90,24 @@ components:
       in: query
       schema:
         type: integer
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+  schemas:
+    ODataCollection:
+      type: object
+      properties:
+        '@odata.context':
+          type: string
+        '@odata.nextLink':
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   securitySchemes:
     sessionCookie:
       type: apiKey
