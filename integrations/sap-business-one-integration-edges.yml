@@ -1,0 +1,22 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/sap-business-one/integrations
+checked:
+- https://composio.dev/toolkits/sap-business-one
+- https://monid.ai/tools/sap-business-one
+- https://n8n.io/integrations/sap-business-one/
+- https://zapier.com/apps/sap-business-one/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: sap-business-one
+  url: https://zapier.com/apps/sap-business-one/integrations
+  external_url: https://www.sap.com/
+  partner_tier: null
+  triggers: []
+  actions: []
+  searches: []
+edges: []
+templates: []
