@@ -69,23 +69,23 @@ paths:
       - Items
 components:
   parameters:
-    Filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
     Select:
       name: $select
       in: query
       schema:
         type: string
-    Top:
-      name: $top
+    Skip:
+      name: $skip
       in: query
       schema:
         type: integer
-    Skip:
-      name: $skip
+    Filter:
+      name: $filter
+      in: query
+      schema:
+        type: string
+    Top:
+      name: $top
       in: query
       schema:
         type: integer

@@ -70,18 +70,18 @@ paths:
       - Business Partners
 components:
   parameters:
-    Filter:
-      name: $filter
-      in: query
-      schema:
-        type: string
-    OrderBy:
-      name: $orderby
-      in: query
-      schema:
-        type: string
     Select:
       name: $select
+      in: query
+      schema:
+        type: string
+    Skip:
+      name: $skip
+      in: query
+      schema:
+        type: integer
+    Filter:
+      name: $filter
       in: query
       schema:
         type: string
@@ -90,11 +90,11 @@ components:
       in: query
       schema:
         type: integer
-    Skip:
-      name: $skip
+    OrderBy:
+      name: $orderby
       in: query
       schema:
-        type: integer
+        type: string
   schemas:
     ODataCollection:
       type: object
