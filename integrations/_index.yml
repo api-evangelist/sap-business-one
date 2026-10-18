@@ -52,5 +52,5 @@
     - connectors/applications/sap-business-one
     vendor_link: https://www.sap.com/products/business-one.html
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
